@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.image-group {
+    margin-bottom: 30px;
+}
+
+.image-group h2 {
+    background: #333;
+    color: #fff;
+    padding: 10px;
+    margin: 0;
+}
+
+.images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+    background: #fff;
+}
+
+.images img {
+    width: 150px;
+    height: auto;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.images img:hover {
+    transform: scale(1.1);
+    border-color: #333;
+}
+img {
+    width: 200px; /* 固定寬度，例如 200px */
+    height: 200px; /* 固定高度，例如 200px */
+    object-fit: cover; /* 確保圖片填滿框架，並裁切超出部分 */
+    display: inline-block; /* 保持圖片按順序排列 */
+    margin: 10px; /* 圖片之間的間距 */
+  }
+  
