@@ -1,415 +1,309 @@
+/* 通用背景與內容設定 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #fff;
+    background-image: url('FW_pics/Cybertron_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
-        
-        /* 固定在頁面最左上方的 Transformers 標題 */
-        .transformers-title {
-            position: fixed;
-            top: 0;
-            left: 0;
-            font-size: 24px;
-            font-weight: bold;
-            color: #fff;
-            font-family: 'Orbitron', sans-serif;
-            padding: 10px 20px;
-            text-transform: uppercase;
-            z-index: 200;
-        }
-/* 頂部工具列 */
+/* 固定在頁面頂部的工具條 */
 .top-bar {
-            position: fixed; /* 固定在頂部 */
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 50px;
-            background-color: rgba(0, 0, 0, 0.8); /* 半透明黑背景 */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 100; /* 保持在最上層 */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
-
-        .top-bar button {
-            background-color: #444;
-            color: #fff;
-            border: none;
-            padding: 10px 15px;
-            margin: 0 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 14px;
-        }
-
-        .top-bar button:hover {
-            background-color: #666;
-        }
-        /* 頁面背景與內容設定 */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            color: #fff;
-            background-image: url('FW_pics/Cybertron_bg.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-
-        /* 單個圖片區塊 */
-        .image-container {
-            display: flex;
-            gap: 0x;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .image-item {
-            position: relative;
-            width: 275px;
-            border-radius: 10px;
-            overflow: hidden;
-            border: 0px solid #ccc;
-            transition: transform 0.3s, box-shadow 0.3s;
-            text-align: center;
-        }
-
-         /* 單個圖片區塊 */
-         .image-item img {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: auto; /* 確保圖片高度一致 */
-    aspect-ratio: 1/2; /* 強制圖片為正方形 */
-    object-fit: cover; /* 裁剪圖片適應容器 */
-    display: block; /* 避免 inline-block 默認的間距 */
-}
-
-    /* 滿版底部圖片區塊 */
-    .full-width-banner a img {
-        width: 100%;
-        height: 500px; /* 增加底部圖片的高度 */
-        object-fit: cover;
-    }
-
-        .full-width-banner a img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-        }
-
-        .hover-text {
-            position: absolute;
-            bottom: -40px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: rgba(0, 0, 0, 0.8);
-            color: #fff;
-            padding: 10px 20px;
-            font-size: 30px;
-            border-radius: 5px;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out, bottom 0.3s ease-in-out;
-        }
-
-        .full-width-banner:hover .hover-text {
-            opacity: 1;
-            bottom: 20px;
-        }
-
-        /* 頁面背景與內容設定 */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            color: #fff;
-            background-image: url('FW_pics/Cybertron_bg.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-
-        .content {
-            margin-top: 110px;
-            padding: 20px;
-        }
-
-
-
-
-        /* 文字樣式 */
-        .more-than-meet-the-eye, .meet-the-eye {
-            color: #fff;
-            font-size: 50px;
-            font-weight: bold;
-            text-align: left;
-            padding: 20px;
-            margin: 0;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-        }
-
-        .meet-the-eye {
-            display: flex;
-            align-items: center;
-        }
-
-        /* 單個圖片區塊 */
-        .image-container {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .image-item {
-            position: relative;
-            width: 275px;
-            border-radius: 10px;
-            overflow: hidden;
-            border: 2px solid #ccc;
-            transition: transform 0.3s, box-shadow 0.3s;
-            text-align: center;
-        }
-
-        .image-item:hover {
-            transform: scale(1.1);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        .image-item img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-        }
-
-        .image-item .title {
-            position: absolute;
-            top: 10px;
-            left: 0;
-            right: 0;
-            text-align: center;
-            font-size: 30px;
-            font-weight: 500;
-            color: #fff;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 5px;
-            border-radius: 5px;
-        }
-
-        /* 滿版底部圖片區塊 */
-        .full-width-banner {
-            position: relative;
-            right: 20%;
-            width: 50%;
-            margin-top: 40px;
-            cursor: pointer;
-            overflow: hidden;
-        }
-
-        .full-width-banner img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-        }
-
-        .hover-text {
-            position: absolute;
-            bottom: -40px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: rgba(0, 0, 0, 0.8);
-            color: #fff;
-            padding: 10px 20px;
-            font-size: 30px;
-            border-radius: 5px;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out, bottom 0.3s ease-in-out;
-        }
-
-        .full-width-banner:hover .hover-text {
-            opacity: 1;
-            bottom: 300px;
-        }
-
-        /* 小字區塊的設定 */
-        .small-text {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            max-width: 40%;
-            text-align: left;
-            font-size: 15px;
-            background-color: rgba(0, 0, 0, 0.5);
-            color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            position: relative;
-            top: -100px;
-        }
-        
-/* 右側的圖片設定 */
-.small-text img {
-            position: absolute; /* 絕對定位 */
-            right: -810px; /* 靠近右邊，並且略微覆蓋到黑底的邊緣 */
-            top: -40%; /* 垂直居中 */
-            transform: translateY(-50%) rotateY(0deg); /* 初始狀態不翻轉 */
-            width: 800px; /* 圖片寬度 */
-            height: auto; /* 保持比例 */
-            transition: transform 0.6s ease, opacity 0.3s ease; /* 轉換過渡效果 */
-        }
-
-        /* 當滑鼠懸停在圖片上時，翻轉圖片 */
-        .small-text img:hover {
-            transform: translateY(-50%) rotateY(180deg); /* 翻轉180度 */
-            opacity: 1; /* 保持不變的透明度 */
-            content: url('FW_pics/B.png'); /* 可以選擇直接替換圖片 */
-        }
-
-        /* 響應式調整 */
-        @media (max-width: 768px) {
-
-            .top-bar {
-                flex-wrap: wrap;
-                justify-content: space-around;
-            }
-
-            .small-text {
-                max-width: 90%;
-            }
-
-            .image-item {
-                width: 100%;
-            }
-        }
-        .page-title {
-            font-size: 2rem;
-            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-            color: #ffffff;
-        }
-        @media (max-width: 480px) {
-
-            .meet-the-eye, .more-than-meet-the-eye {
-                font-size: 30px;
-            }
-
-            .hover-text {
-                font-size: 20px;
-                padding: 5px 10px;
-            }
-        }
-        /* 動畫容器 */
-.moving-png-container {
-    position: fixed; /* 固定在視窗，不影響其他內容 */
-    top: 50%; /* 固定在視窗的垂直中心 */
-    left: -200px; /* 從視窗左側開始 */
-    width: 100vw;
-    z-index: 9999; /* 確保在所有圖層最上方 */
-    pointer-events: none; /* 禁止與內容交互，避免影響點擊等操作 */
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.8);
     display: flex;
-    justify-content: center;
-    flex-direction: column; /* 讓圖片堆疊在一起 */
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 1000;
+    box-sizing: border-box;
+    z-index: 1000;
 }
 
-/* 動畫圖片 */
-.moving-png {
+.top-bar button {
+    background-color: #444;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.top-bar button:hover {
+    background-color: #666;
+}
+
+/* 固定在頁面最左上方的 Transformers 標題 */
+.transformers-title {
     position: absolute;
-    width: 200px; /* 圖片寬度 */
-    height: auto; /* 保持比例 */
-    animation: moveRightDown 1s linear , rotateAndChangeImage 1s linear ; /* 循環動畫 */
+    top: 10px;
+    left: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    z-index: 200;
 }
 
-/* 為每個圖片設置不同的延遲時間，使它們的動畫有不同的開始時間 */
-.moving-png:nth-child(1) {
-    animation-delay: 0s;
-}
-.moving-png:nth-child(2) {
-    animation-delay: 0.5s;
-}
-.moving-png:nth-child(3) {
-    animation-delay: 1s;
-}
-.moving-png:nth-child(4) {
-    animation-delay: 1.5s;
-}
-/* 移動動畫：從左上到右下 */
-@keyframes moveRightDown {
-    0% {
-        top: -200px; /* 開始時在左上角 */
-        left: -200px; /* 開始時在視窗外 */
-    }
-    50% {
-        left: 100vw; /* 到達中間位置 */
-    }
-    100% {
-        top: 100px;
-        left: 1000vw; /* 最終移動到右下角 */
-    }
-}
-        /* PNG 動畫設定 */
-        .png-animation {
-            position: absolute;
-            top: 250%;
-            right: 2000px;  /* 初始位置在右邊 */
-            transform: translateY(-50%) scale(0.-5) scaleX(-1);
-            animation: slideAndZoom 15s ease-out forwards;
-            z-index: 20;
-        }
-
-        @keyframes slideAndZoom {
-            0% {
-                right: 2000px;
-                transform: translateY(-50%) scale(0.1) scaleX(-1);
-            }
-            75% {
-                right: -10%;
-                transform: translateY(-50%) scale(0.5) scaleX(-1);
-            }
-            100% {
-                right: -10%;
-                transform: translateY(-50%) scale(0.5) scaleX(-1);
-            }
-        }
-/* 不同動畫路徑 */
-@keyframes slideAndZoomAdditional {
-    0% {
-        top: 200px;
-        right: 1500px;
-        transform: scale(0.2);
-    }
-    50% {
-        top: 400px;
-        right: 800px;
-        transform: scale(0.8);
-    }
-    100% {
-        top: 600px;
-        right: 300px;
-        transform: scale(0.5);
-    }
-}
-       /* 設定背景容器 */
-.background-container {
-  position: relative;
-  width: 100%;
-  height: 100vh; /* 全螢幕高度 */
-  overflow: hidden;
+/* 內容區域，確保在背景圖片下方 */
+.content {
+    margin-top: 110px; /* 留出空間，確保不被工具條遮住 */
+    padding: 20px;
 }
 
-.background-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1; /* 放在最底層 */
+/* 圖片容器設定 */
+.image-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
+
+.image-item {
+    width: 275px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #ccc;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    margin-bottom: 20px; /* 增加底部間距 */
+}
+
+.image-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.image-item:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* 滿版底部圖片區塊 */
+.full-width-banner {
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.full-width-banner img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.5s ease-in-out;
+}
+
+.hover-text {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 30px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, bottom 0.3s ease-in-out;
+}
+.full-width-banner:hover img {
+    transform: scale(1.05);
+}
+.full-width-banner:hover .hover-text {
+    opacity: 1;
+}
+
+/* 滿版背景圖片切換效果 */
 .full-width-image {
-    width: 100%;            /* 使寬度佔滿整個頁面 */
-    height: 100vh;          /* 高度設為視窗高度，讓內容填滿整個螢幕 */
-    background-size: cover; /* 確保背景圖片會覆蓋整個區域 */
-    background-position: center; /* 圖片保持居中 */
-    position: relative;     /* 保持原本的定位 */
-    transition: background-image 1s ease-in-out; /* 背景圖片變化的過渡效果 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 800px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1; /* 確保背景層位於內容下方 */
+    transition: background-image 1s ease-in-out;
+}
+
+/* 小字區塊 */
+.small-text {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+    font-size: 15px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 100%;
+    margin-top: 20px; /* 使小字區塊距離其他內容 */
+    position: relative;
+    justify-content: space-between;
+}
+
+/* 小字圖片的翻轉效果 */
+.small-text img {
+    width: 200px;
+    height: auto;
+    transition: transform 0.6s ease, opacity 0.3s ease;
+}
+
+.small-text img:hover {
+    transform: rotateY(180deg);
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .image-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .image-item {
+        max-width: 100%; /* 每行顯示一張圖片 */
+        margin-bottom: 10px; /* 增加間距 */
+    }
+
+    .top-bar {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .transformers-title {
+        font-size: 18px; /* 在小螢幕上減小字型大小 */
+        top: 5px;
+        left: 10px;
+    }
+}
+
+
+
+.carousel {
+    max-width: 600px;  /* 設定輪播的最大寬度 */
+    max-height: 800px;
+    right: -50px;
+    top: 450px;
+    margin-top: 50px;
+}
+
+.carousel-inner img {
+    width: 100%; 
+    height: 300px;
+    object-fit: cover; 
+    opacity: 0; 
+    animation: fadeIn 1s forwards;
+}
+
+.carousel-item:nth-child(1) img {
+    animation-delay: 0s; 
+}
+
+.carousel-item:nth-child(2) img {
+    animation-delay: 0.2s;  
+}
+
+.carousel-item:nth-child(3) img {
+    animation-delay: 0.2s; 
+}
+/* 最新消息卡片排版 */
+
+.news-container .small-card {
+    flex: 1 1 calc(33.333% - 10px); /* 每行顯示 3 個，留出間距 */
+    max-width: calc(33.333% - 10px); /* 確保卡片不超過容器寬度 */
+    box-sizing: border-box;
+    position: relative;
+    top: 450px;
+    right: 100px;
+}
+
+.news-container img {
+    height: 200px; /* 調整圖片高度 */
+    object-fit: cover; /* 確保圖片比例不失真 */
+}
+
+@media (max-width: 992px) {
+    /* 平板模式，每行顯示 2 個 */
+    .news-container .small-card {
+        flex: 1 1 calc(50% - 10px);
+        max-width: calc(50% - 10px);
+    }
+}
+
+@media (max-width: 576px) {
+    /* 手機模式，每行顯示 1 個 */
+    .news-container .small-card {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+/* 定義淡入動畫 */
+@keyframes fadeIn {
+    0% {
+        opacity: 0; /* 從完全透明開始 */
+    }
+    100% {
+        opacity: 1; /* 逐漸顯示為完全不透明 */
+    }
+}
+
+/* 響應式設置：在小螢幕上調整圖片大小 */
+@media (max-width: 768px) {
+    .carousel-inner img {
+        height: 200px;  /* 在小螢幕上設置較小的高度 */
+    }
+}
+
+/* 動態互動效果：媒體分類區塊 */
+.interactive-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-top: 400px;
+}
+
+.interactive-item img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+}
+
+.interactive-item:hover img {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.hover-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.interactive-item:hover .hover-title {
+    opacity: 1;
+    transform: translateY(0);
 }
 
