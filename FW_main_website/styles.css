@@ -90,55 +90,29 @@ body {
     transform: scale(1.1);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
-
-/* 滿版底部圖片區塊 */
-.full-width-banner {
-    position: relative;
-    width: 100%;
-    cursor: pointer;
-    overflow: hidden;
+.image-grid {
+    margin-top: 400px; /* 增加這個來讓標題下移 */
 }
 
-.full-width-banner img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    transition: transform 0.5s ease-in-out;
-}
-
-.hover-text {
-    position: absolute;
-    bottom: -40px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    padding: 10px 20px;
-    font-size: 30px;
-    border-radius: 5px;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out, bottom 0.3s ease-in-out;
-}
-.full-width-banner:hover img {
-    transform: scale(1.05);
-}
-.full-width-banner:hover .hover-text {
-    opacity: 1;
-}
-
-/* 滿版背景圖片切換效果 */
 .full-width-image {
     position: absolute;
-    top: 0;
+    top: 60px;
     left: 0;
     width: 100%;
-    height: 800px;
+    z-index: -1;
+    transition: background-image 1s ease-in-out;
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-    z-index: -1; /* 確保背景層位於內容下方 */
-    transition: background-image 1s ease-in-out;
 }
+.banner {
+    height: 1000px;
+    background-image: url('FW_pics/top_pics.gif');
+    background-size: 100% 100%;
+border: 2px solid rgb(255, 213, 0);
+    background-position: center;
+    background-repeat: no-repeat; /* 防止圖片重複 */
+}
+
 
 /* 小字區塊 */
 .small-text {
@@ -191,13 +165,11 @@ body {
     }
 }
 
-
-
 .carousel {
     max-width: 600px;  /* 設定輪播的最大寬度 */
     max-height: 800px;
     right: -50px;
-    top: 450px;
+    top: 1200px;
     margin-top: 50px;
 }
 
@@ -220,20 +192,57 @@ body {
 .carousel-item:nth-child(3) img {
     animation-delay: 0.2s; 
 }
+/* 響應式設置：當螢幕寬度小於768px時，調整輪播大小 */
+@media (max-width: 768px) {
+    .carousel {
+        max-width: 50%;   /* 讓輪播在小螢幕上寬度適應 */
+        max-height: 500px; /* 減小輪播的最大高度 */
+    }
+
+    .carousel-inner img {
+        height: 200px; /* 小螢幕下的圖片高度 */
+    }
+}
+
+/* 響應式設置：當螢幕寬度小於480px時，調整輪播大小 */
+@media (max-width: 480px) {
+    .carousel {
+        max-width: 25%;
+        max-height: 400px; /* 更小的高度 */
+    }
+
+    .carousel-inner img {
+        height: 150px; /* 更小的圖片高度 */
+    }
+}
 /* 最新消息卡片排版 */
 
 .news-container .small-card {
-    flex: 1 1 calc(33.333% - 10px); /* 每行顯示 3 個，留出間距 */
-    max-width: calc(33.333% - 10px); /* 確保卡片不超過容器寬度 */
-    box-sizing: border-box;
+    flex: 2 2 calc(16% - 5px);
+    max-width: calc(20% - 5px);
     position: relative;
-    top: 450px;
+    top: 1200px;
     right: 100px;
+    overflow: hidden; /* 確保內容不會溢出卡片 */
+}
+
+.news-container .card-body {
+    padding: 10px; /* 減少內邊距，縮小黑底區域 */
+    height: auto;  /* 設置為自動，根據內容調整 */
 }
 
 .news-container img {
+    width: 100%;  /* 設置圖片寬度為 100%，使其寬度填滿容器 */
     height: 200px; /* 調整圖片高度 */
     object-fit: cover; /* 確保圖片比例不失真 */
+}
+
+.news-container .card-body h6 {
+    font-size: 16px; /* 減小標題字體，讓黑底區域顯得短一些 */
+}
+
+.news-container .card-body p {
+    font-size: 14px; /* 減小文字大小，讓黑底區域顯得短一些 */
 }
 
 @media (max-width: 992px) {
@@ -274,7 +283,7 @@ body {
     position: relative;
     overflow: hidden;
     border-radius: 8px;
-    margin-top: 400px;
+    margin-top: 50px;
 }
 
 .interactive-item img {
@@ -307,3 +316,56 @@ body {
     transform: translateY(0);
 }
 
+/* 設定圖片初始樣式，讓圖片隱藏並位於畫面外 */
+.delayed-image {
+    position: sticky;
+    width: 600px;
+    height: 600px;
+    top: 10%;
+    opacity: 0;
+    transition: opacity 1s ease-out;
+    z-index: -100;
+}
+
+/* 左側和右側圖片的初始位置 */
+.delayed-image.left {
+    left: 50px; /* 左側圖片從畫面外開始 */
+}
+
+.delayed-image.right {
+    right: 100px; ;
+    width: 800px; ;
+}
+/* 當圖片進入視窗範圍時觸發的動畫效果 */
+.delayed-image.show {
+    opacity: 1;
+    transition: transform 1s ease-out, opacity 1s ease-out;
+}
+.sticky-element {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 200px;
+    will-change: position;  /* 提示瀏覽器優化位置變化 */
+}
+
+/* 加入黑線樣式 */
+h2 {
+    border-top: 50px solid black; /* 在上方加一條 2px 寬的黑色線 */
+    padding-top: 10px;
+    margin-top: 50px;
+}
+/* 加入黑線樣式 */
+h3 {
+    border-top: 100px solid black; /* 在上方加一條 2px 寬的黑色線 */
+    padding-top: 10px;
+    margin-top: 50px;
+    text-align: center; /* 使文字置中 */
+    font-size: 30px;
+    margin-top: 50px; /* 若有需要，可以控制間距 */
+}
+/* 停止圖片移動，當滾動到達黑線上時 */
+.delayed-image.sticky {
+    position: sticky;
+    top: 0; /* 圖片會停留在 border-top 上 */
+    z-index: 10; /* 確保圖片在其他元素之上 */
+}

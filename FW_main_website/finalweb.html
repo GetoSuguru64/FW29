@@ -12,6 +12,7 @@
             font-family: 'Orbitron', sans-serif, Arial, sans-serif;
             background: url('FW_pics/Cybertron_bg.jpg') no-repeat center center/cover;
             color: #fff;
+            overflow-x: hidden;  /* 禁用水平滾動條 */
         }
 
         .navbar-brand {
@@ -76,12 +77,12 @@
 <!-- 橫幅區域 -->
 <div class="full-width-image" >
 <div class="banner" style="background-image: url('FW_pics/top_pics.gif');">
-    <div class="container">
         <h1>Transformers 媒體指南</h1>
     </div>
 </div>
 </div>
-
+</div>
+<h1>Transformers 媒體指南</h1>
 <div class="row align-items-start">
     <!-- Carousel -->
     <div class="col-md-8">
@@ -89,12 +90,15 @@
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img src="FW_pics/news1.png" class="d-block w-100" alt="圖片1">
+                    <h6 class="card-title">NEW  moive 2007 figures</h6>
                 </div>
                 <div class="carousel-item">
                     <img src="FW_pics/news2.png" class="d-block w-100" alt="圖片2">
+                    <h6 class="card-title">Will Shockwave appear in new Transformers project</h6>
                 </div>
                 <div class="carousel-item">
                     <img src="FW_pics/news3.png" class="d-block w-100" alt="圖片3">
+                    <h6 class="card-title">YOLOPARK Apelinq</h6>
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#mediaCarousel" data-bs-slide="prev">
@@ -110,26 +114,46 @@
 
     <!-- 最新消息 -->
     <div class="col-md-4 d-flex flex-column">
-        <h3 class="text-center">最新消息</h3>
         <div class="d-flex flex-row flex-wrap gap-2 justify-content-center news-container">
             <div class="card text-bg-dark small-card">
-                <img src="FW_pics/news1.png" class="card-img-top" alt="消息圖片1">
+                <img src="FW_pics/g1mega.jpg" class="card-img-top" alt="消息圖片1">
                 <div class="card-body">
                     <h6 class="card-title">消息標題1</h6>
                     <p class="card-text">這是簡短描述內容。</p>
                 </div>
             </div>
             <div class="card text-bg-dark small-card">
-                <img src="FW_pics/news2.png" class="card-img-top" alt="消息圖片2">
+                <img src="FW_pics/jetop.jpg" class="card-img-top" alt="消息圖片2">
                 <div class="card-body">
                     <h6 class="card-title">消息標題2</h6>
                     <p class="card-text">另一條消息簡述。</p>
                 </div>
             </div>
             <div class="card text-bg-dark small-card">
-                <img src="FW_pics/news3.png" class="card-img-top" alt="消息圖片3">
+                <img src="FW_pics/knight.jpg" class="card-img-top" alt="消息圖片3">
                 <div class="card-body">
                     <h6 class="card-title">消息標題3</h6>
+                    <p class="card-text">更多資訊展示。</p>
+                </div>
+            </div>
+            <div class="card text-bg-dark small-card">
+                <img src="FW_pics/mira.jpg" class="card-img-top" alt="消息圖片3">
+                <div class="card-body">
+                    <h6 class="card-title">消息標題4</h6>
+                    <p class="card-text">更多資訊展示。</p>
+                </div>
+            </div>
+            <div class="card text-bg-dark small-card">
+                <img src="FW_pics/drift.jpg" class="card-img-top" alt="消息圖片3">
+                <div class="card-body">
+                    <h6 class="card-title">消息標題5</h6>
+                    <p class="card-text">更多資訊展示。</p>
+                </div>
+            </div>
+            <div class="card text-bg-dark small-card">
+                <img src="FW_pics/tarn.jpg" class="card-img-top" alt="消息圖片3">
+                <div class="card-body">
+                    <h6 class="card-title">消息標題4</h6>
                     <p class="card-text">更多資訊展示。</p>
                 </div>
             </div>
@@ -137,16 +161,18 @@
     </div>
 </div>
 
-
-
-
+<div class="delayed-images-container">
+    <img src="FW_pics/drift.png" alt="Left Image" class="delayed-image left" />
+    <img src="FW_pics/crosshairs.png" alt="Right Image" class="delayed-image right" />
+    <h3 class="mt-5">最新消息</h3>
+</div>
 
 <!-- 圖片網格區域 -->
 <div class="row text-center image-grid">
     <h2 class="mt-5">所有資訊</h2>
     <div class="col-md-3">
         <div class="interactive-item">
-            <a href="FW_websites/tf_movie.html" class="d-block mb-4">
+            <a href="FW_websites/tf_movie.html">
                 <img src="FW_pics/tf_moive.png" class="img-fluid" alt="電影">
                 <div class="hover-title">電影</div>
             </a>
@@ -154,7 +180,7 @@
     </div>
     <div class="col-md-3">
         <div class="interactive-item">
-            <a href="FW_websites/tf_ani.html" class="d-block mb-4">
+            <a href="FW_websites/tf_ani.html">
                 <img src="FW_pics/tf_ani.png" class="img-fluid" alt="動畫">
                 <div class="hover-title">動畫</div>
             </a>
@@ -162,7 +188,7 @@
     </div>
     <div class="col-md-3">
         <div class="interactive-item">
-            <a href="FW_websites/tf_comic.html" class="d-block mb-4">
+            <a href="FW_websites/tf_comic.html">
                 <img src="FW_pics/tf_comic.png" class="img-fluid" alt="漫畫">
                 <div class="hover-title">漫畫</div>
             </a>
@@ -170,14 +196,13 @@
     </div>
     <div class="col-md-3">
         <div class="interactive-item">
-            <a href="FW_websites/tf_toy.html" class="d-block mb-4">
+            <a href="FW_websites/tf_toy.html">
                 <img src="FW_pics/tf_toy.png" class="img-fluid" alt="玩具">
                 <div class="hover-title">玩具</div>
             </a>
         </div>
     </div>
 </div>
-
 
 <!-- 底部 -->
 <footer class="footer">
@@ -186,6 +211,8 @@
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
 <script src="scripts.js"></script>
+
 </body>
 </html>
