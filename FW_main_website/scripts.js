@@ -52,3 +52,5 @@ parallaxCards.forEach((card) => {
 });
 
 });
+
+
