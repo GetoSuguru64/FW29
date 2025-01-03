@@ -39,19 +39,20 @@
 </div>
 
 
-//資料庫動態生成部分
 <h6>卡片展示</h6>
-    <div id="carousel"></div> <!-- 卡片容器 -->
+<div id="cardContainer"></div> <!-- 卡片容器 -->
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // 從伺服器獲取卡片資料並動態生成幻燈片
-        // 從伺服器獲取卡片資料並動態生成幻燈片
-    fetch('https://fw29.onrender.com/api/cards')
+<!-- 引入外部 CSS -->
+<link rel="stylesheet" href="styles.css">
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // 從伺服器獲取卡片資料並動態生成幻燈片
+    fetch('http://localhost:3000/api/cards')
         .then(response => response.json())
         .then(cards => {
-            const container = document.getElementById('carousel');
+            const container = document.getElementById('cardContainer');
             container.innerHTML = ''; // 清空容器
 
             // 創建 Carousel 的結構
@@ -83,14 +84,13 @@
                 item.className = `carousel-item${index === 0 ? ' active' : ''}`;
 
                 item.innerHTML = `
-                    <div class="d-flex justify-content-center align-items-center" style="height: 300px; background-color: #f1ef72;">
-                        <img src="${card.imageUrl}" alt="${card.title}" class="d-block w-50">
-                        <div class="carousel-caption d-none d-md-block">
-                            <dbh1>${card.title}</dbh1>
-                            <br><dbh2>${card.description}</dbh2>
+                    <div class="carousel-card">
+                        <img src="${card.imageUrl}" alt="${card.title}" class="carousel-image">
+                        <div class="carousel-caption">
+                            <h1 class="carousel-title">${card.title}</h1>
+                            <h2 class="carousel-description">${card.description}</h2>
                         </div>
                     </div>`;
-
                 inner.appendChild(item);
             });
 
@@ -101,7 +101,7 @@
             prevButton.setAttribute('data-bs-target', `#${carouselId}`);
             prevButton.setAttribute('data-bs-slide', 'prev');
             prevButton.innerHTML = `
-                <span class="carousel-control-prev-icon" aria-hidden="true" style="filter: invert(100%); opacity: 1;"></span>
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>`;
 
             const nextButton = document.createElement('button');
@@ -110,7 +110,7 @@
             nextButton.setAttribute('data-bs-target', `#${carouselId}`);
             nextButton.setAttribute('data-bs-slide', 'next');
             nextButton.innerHTML = `
-                <span class="carousel-control-next-icon" aria-hidden="true" style="filter: invert(100%); opacity: 1;"></span>
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>`;
 
             // 將元素添加到 Carousel 容器中
@@ -123,37 +123,7 @@
             container.appendChild(carouselElement);
         })
         .catch(error => console.error('無法載入卡片資料:', error));
-
-            
-    </script>
-//
-
-<div class="row align-items-start">
-    <!-- Carousel -->
-    <div class="col-md-8">
-        <div id="mediaCarousel" class="carousel slide mb-4" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="FW_pics/news1.png" class="d-block w-100" alt="圖片1">
-                </div>
-                <div class="carousel-item">
-                    <img src="FW_pics/news2.png" class="d-block w-100" alt="圖片2">
-                </div>
-                <div class="carousel-item">
-                    <img src="FW_pics/news3.png" class="d-block w-100" alt="圖片3">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#mediaCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#mediaCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-    </div>
-
+</script>
 <!-- 新增圖片區塊 -->
 <div class="image-section">
     <div class="container">

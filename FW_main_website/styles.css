@@ -143,6 +143,7 @@ body {
     background-color: rgba(0, 0, 0, 0.7); /* 背景顏色，增加可讀性 */
     color: #fff; /* 文字顏色 */
     text-align: left;
+    margin-top: -320px;
 }
 
 .new-paragraph p {
@@ -154,8 +155,7 @@ body {
 /* 新圖片區塊樣式 */
 .image-section {
     position: relative;
-    margin-top: 2px; /* 增加與其他內容的間距 */
-    top: 288px;
+    top: -32px;
     left: 580px; 
 }
 
@@ -390,82 +390,6 @@ body {
     }
 }
 
-/* 初始狀態：隱藏於右側 */
-.parallax-card {
-    opacity: 0;
-    transform: translateX(100px);
-    transition: transform 0.6s ease, opacity 0.6s ease;
-}
-
-/* 進入視野時觸發動畫 */
-.parallax-card.visible {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-/* 離開視野時向左側隱藏 */
-.parallax-card.hidden {
-    opacity: 0;
-    transform: translateX(100px);
-}
-
-/* 視差效果容器 */
-.parallax-container {
-    position: relative;
-    overflow: hidden; /* 確保圖片不超出容器 */
-    height: 500px; /* 設定容器高度 */
-}
-
-/* 視差圖片 */
-.parallax-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-    transform: translateY(0); /* 初始位置 */
-    transition: transform 0.1s ease-out; /* 平滑移動效果 */
-}
-/* 手機設備 */
-@media (max-width: 576px) {
-    .parallax-container {
-        height: 300px; /* 減小容器高度 */
-    }
-
-    .parallax-card {
-        transform: translateX(50px); /* 減少動畫移動距離 */
-    }
-
-    .parallax-image {
-        height: 100%; /* 確保視差圖片不變形 */
-    }
-}
-
-/* 平板設備 */
-@media (min-width: 577px) and (max-width: 992px) {
-    .parallax-container {
-        height: 400px; /* 適中容器高度 */
-    }
-
-    .parallax-card {
-        transform: translateX(75px); /* 調整動畫距離 */
-    }
-}
-
-/* 桌面設備 */
-@media (min-width: 993px) {
-    .parallax-container {
-        height: 500px; /* 保持原高度 */
-    }
-
-    .parallax-card {
-        transform: translateX(100px); /* 保持動畫距離 */
-    }
-
-    .parallax-image {
-        height: auto; /* 保持圖片比例 */
-    }
-}
 /* 頁尾樣式 */
 .footer {
     padding: 30px;
@@ -614,46 +538,54 @@ h2{
     color: #ffffff;
     font-weight: bold;
 }
-/* 行與列樣式 */
-.row.align-items-start {
-    margin: 10px auto;
-    max-width: 1500px;
+/* 通用卡片樣式 */
+.carousel-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;  /* 增加高度，避免圖片被裁切 */
+    background-color: #1c1b31;
+    position: relative;
+    margin-top: 315px; /* 透過 margin-top 位移 */
 }
 
-/* Carousel 容器樣式 */
-#mediaCarousel {
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
-    overflow: hidden;
-    right: -200px;
-    top: 400px;
+.carousel-image {
+    width: 50%;
 }
 
-/* Carousel 圖片樣式 */
-#mediaCarousel .carousel-item img {
-    height: 400px;
-    object-fit: cover;
-
+.carousel-caption {
+    position: absolute;
+    bottom: 10%; /* 調整文字的位置 */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6); /* 半透明背景 */
+    border-radius: 8px;
 }
 
-/* 控制按鈕樣式 */
+.carousel-title {
+    font-size: 1.5rem;
+    color: #fff;
+    margin: 0;
+}
+
+.carousel-description {
+    font-size: 1rem;
+    color: #ffffff;
+    margin: 0;
+}
+
+/* 自訂控制按鈕 */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
     filter: invert(100%);
-    opacity: 0.8;
-}
-
-.carousel-control-prev:hover .carousel-control-prev-icon,
-.carousel-control-next:hover .carousel-control-next-icon {
     opacity: 1;
+    opacity: 1;
+    font-size: 2rem; /* 調整箭頭大小 */
+    width: 50px;  /* 設定寬度 */
+    height: 50px; /* 設定高度 */
+    position: absolute; /* 使控制按鈕相對於容器定位 */
+    top: 60%; /* 下移箭頭 */
+    
 }
 
-.carousel-control-prev,
-.carousel-control-next {
-    width: 5%;
-}
-
-/* 底部間距 */
-.mb-4 {
-    margin-bottom: 2rem !important;
-}
