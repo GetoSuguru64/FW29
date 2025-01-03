@@ -232,7 +232,8 @@ body {
     /* 當螢幕寬度小於576px時 */
     .new-paragraph {
         padding: 15px; /* 減少內邊距 */
-        margin-bottom: 500px;
+        margin-bottom: 50px;
+        margin-top: 300px;
     }
     .new-paragraph p {
         font-size: 12px; /* 調整文字大小 */
@@ -247,40 +248,12 @@ body {
         max-width: 0%; /* 圖片寬度為100% */
     }
     .image-section2 {
-        margin-top: 20px; /* 減少圖片區塊與其他內容的間距 */
-        top: 500px;
+        top: -100px;
         left: 0;
     }
-
     .image-section2 img {
         max-width: 100%; /* 圖片最大寬度為100% */
-        border-radius: 5px; /* 圓角效果略微減少 */
     }
-}
-
-
-.small-text {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    text-align: left;
-    font-size: 15px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    padding: 10px; /* 減小內部填充 */
-    margin: 10px 0; /* 減少與上下區塊的外部間距 */
-    border-radius: 5px;
-    max-width: 100%;
-}
-
-.small-text img {
-    width: 150px; /* 縮小圖片大小 */
-    margin-right: 10px; /* 圖片與文字間距 */
-}
-
-
-.small-text img:hover {
-    transform: rotateY(180deg);
 }
 
 /* 響應式設計 */
@@ -304,34 +277,6 @@ body {
         top: 5px;
         left: 10px;
     }
-}
-
-.carousel {
-    max-width: 600px;
-    max-height: 800px;
-    right: -50px;
-}
-
-/* 圖片樣式 */
-.carousel-inner img {
-    width: 100%; 
-    height: 300px;
-    object-fit: cover; 
-    opacity: 0; 
-    animation: fadeIn 1s forwards;
-}
-
-/* 動畫延遲設定 */
-.carousel-item:nth-child(1) img {
-    animation-delay: 0s; 
-}
-
-.carousel-item:nth-child(2) img {
-    animation-delay: 0.2s;  
-}
-
-.carousel-item:nth-child(3) img {
-    animation-delay: 0.2s; 
 }
 
 .interactive-item {
@@ -597,7 +542,6 @@ body {
 .footer-social {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
     gap: 15px;
 }
 
@@ -610,17 +554,7 @@ body {
 .footer-social img:hover {
     transform: scale(1.2); /* 放大效果 */
 }
-.card {
-    border: 1px solid #ccc;
-    padding: 16px;
-    margin: 16px;
-    width: 300px;
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
-}
-.card img {
-    width: 100%;
-    height: auto;
-}
+
 body {
     font-family: 'Orbitron', sans-serif, Arial, sans-serif;
     background: url('FW_pics/Cybertron_bg.jpg') no-repeat center center/cover;
@@ -680,65 +614,78 @@ h2{
     color: #ffffff;
     font-weight: bold;
 }
+/* 卡片容器樣式 */
+#cardContainer {
+    margin: 20px auto; /* 外邊距置中 */
+    max-width: 1200px; /* 最大寬度 */
+}
+
+/* Carousel 容器樣式 */
+.carousel {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto; /* 讓 Carousel 居中 */
+    background-color: #f8f9fa; /* 背景色 */
+    border-radius: 10px; /* 圓角效果 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 陰影 */
+    overflow: hidden; /* 隱藏溢出的內容 */
+}
+
+/* Carousel 項目樣式 */
 .carousel-item {
-    background-color: transparent !important; /* 透明背景 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px; /* 固定高度 */
+    background-color: #e9ecef; /* 背景色 */
+    border-radius: 10px; /* 圓角效果 */
+    overflow: hidden;
 }
+
+.carousel-item img {
+    max-height: 100%; /* 圖片高度自適應 */
+    max-width: 100%; /* 圖片寬度自適應 */
+    object-fit: contain; /* 確保圖片不會變形 */
+}
+
+/* Carousel Caption 樣式 */
 .carousel-caption {
-    background-color: rgba(0, 0, 0, 0.795); /* 半透明黑色背景 */
-    padding: 10px;
-    border-radius: 5px;
-}
-/* 大螢幕 (桌機) */
-@media (min-width: 1200px) {
-    .card {
-        max-width: 350px; /* 桌機時卡片稍微放大 */
-    }
-
-    .carousel-caption {
-        bottom: 30px;
-        font-size: 1.2rem;
-    }
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #000; /* 文字顏色 */
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8); /* 半透明背景 */
+    padding: 10px 20px; /* 內邊距 */
+    border-radius: 5px; /* 圓角效果 */
+    font-family: Arial, sans-serif; /* 字體樣式 */
 }
 
-/* 中型螢幕 (平板) */
-@media (min-width: 768px) and (max-width: 1199px) {
-    .card {
-        max-width: 300px;
-    }
-
-    .carousel-caption {
-        font-size: 1rem;
-    }
+.carousel-caption h1 {
+    font-size: 1.5rem; /* 標題大小 */
+    font-weight: bold;
+    margin-bottom: 5px;
 }
 
-/* 小螢幕 (手機) */
-@media (max-width: 767px) {
-    .card {
-        width: 90%; /* 手機時卡片寬度跟隨容器縮放 */
-        margin: 0 auto 20px auto; /* 保持間距 */
-    }
-
-    .carousel-caption {
-        display: none; /* 手機上隱藏次要信息 */
-    }
-
-    body {
-        padding: 10px; /* 避免邊緣過窄 */
-    }
-
-    img {
-        max-width: 100%; /* 圖片響應式縮放 */
-        height: auto;
-    }
+.carousel-caption h2 {
+    font-size: 1rem; /* 描述大小 */
+    font-weight: normal;
 }
 
-/* 超小螢幕 (小型手機) */
-@media (max-width: 375px) {
-    .card {
-        max-width: 280px;
-    }
+/* Carousel 控制按鈕樣式 */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(100%); /* 翻轉顏色 */
+    opacity: 0.8; /* 透明度 */
+}
 
-    .carousel-caption {
-        font-size: 0.8rem; /* 文字縮小以適應螢幕 */
-    }
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+    opacity: 1; /* 懸停時完全不透明 */
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%; /* 控制按鈕寬度 */
 }
