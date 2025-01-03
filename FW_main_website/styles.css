@@ -779,4 +779,57 @@ h2{
     padding: 10px;
     border-radius: 5px;
 }
+/* 大螢幕 (桌機) */
+@media (min-width: 1200px) {
+    .card {
+        max-width: 350px; /* 桌機時卡片稍微放大 */
+    }
 
+    .carousel-caption {
+        bottom: 30px;
+        font-size: 1.2rem;
+    }
+}
+
+/* 中型螢幕 (平板) */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .card {
+        max-width: 300px;
+    }
+
+    .carousel-caption {
+        font-size: 1rem;
+    }
+}
+
+/* 小螢幕 (手機) */
+@media (max-width: 767px) {
+    .card {
+        width: 90%; /* 手機時卡片寬度跟隨容器縮放 */
+        margin: 0 auto 20px auto; /* 保持間距 */
+    }
+
+    .carousel-caption {
+        display: none; /* 手機上隱藏次要信息 */
+    }
+
+    body {
+        padding: 10px; /* 避免邊緣過窄 */
+    }
+
+    img {
+        max-width: 100%; /* 圖片響應式縮放 */
+        height: auto;
+    }
+}
+
+/* 超小螢幕 (小型手機) */
+@media (max-width: 375px) {
+    .card {
+        max-width: 280px;
+    }
+
+    .carousel-caption {
+        font-size: 0.8rem; /* 文字縮小以適應螢幕 */
+    }
+}
