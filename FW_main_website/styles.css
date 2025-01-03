@@ -614,78 +614,46 @@ h2{
     color: #ffffff;
     font-weight: bold;
 }
-/* 卡片容器樣式 */
-#cardContainer {
-    margin: 20px auto; /* 外邊距置中 */
-    max-width: 1200px; /* 最大寬度 */
+/* 行與列樣式 */
+.row.align-items-start {
+    margin: 10px auto;
+    max-width: 1500px;
 }
 
 /* Carousel 容器樣式 */
-.carousel {
-    position: relative;
-    max-width: 100%;
-    margin: 0 auto; /* 讓 Carousel 居中 */
-    background-color: #f8f9fa; /* 背景色 */
-    border-radius: 10px; /* 圓角效果 */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 陰影 */
-    overflow: hidden; /* 隱藏溢出的內容 */
-}
-
-/* Carousel 項目樣式 */
-.carousel-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 300px; /* 固定高度 */
-    background-color: #e9ecef; /* 背景色 */
-    border-radius: 10px; /* 圓角效果 */
+#mediaCarousel {
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
     overflow: hidden;
+    right: -200px;
+    top: 400px;
 }
 
-.carousel-item img {
-    max-height: 100%; /* 圖片高度自適應 */
-    max-width: 100%; /* 圖片寬度自適應 */
-    object-fit: contain; /* 確保圖片不會變形 */
+/* Carousel 圖片樣式 */
+#mediaCarousel .carousel-item img {
+    height: 400px;
+    object-fit: cover;
+
 }
 
-/* Carousel Caption 樣式 */
-.carousel-caption {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #000; /* 文字顏色 */
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.8); /* 半透明背景 */
-    padding: 10px 20px; /* 內邊距 */
-    border-radius: 5px; /* 圓角效果 */
-    font-family: Arial, sans-serif; /* 字體樣式 */
-}
-
-.carousel-caption h1 {
-    font-size: 1.5rem; /* 標題大小 */
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.carousel-caption h2 {
-    font-size: 1rem; /* 描述大小 */
-    font-weight: normal;
-}
-
-/* Carousel 控制按鈕樣式 */
+/* 控制按鈕樣式 */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-    filter: invert(100%); /* 翻轉顏色 */
-    opacity: 0.8; /* 透明度 */
+    filter: invert(100%);
+    opacity: 0.8;
 }
 
 .carousel-control-prev:hover .carousel-control-prev-icon,
 .carousel-control-next:hover .carousel-control-next-icon {
-    opacity: 1; /* 懸停時完全不透明 */
+    opacity: 1;
 }
 
 .carousel-control-prev,
 .carousel-control-next {
-    width: 5%; /* 控制按鈕寬度 */
+    width: 5%;
+}
+
+/* 底部間距 */
+.mb-4 {
+    margin-bottom: 2rem !important;
 }
