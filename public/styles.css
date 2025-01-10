@@ -1,0 +1,652 @@
+/* 通用背景與內容設定 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #fff;
+    background-image: url('FW_pics/Cybertron_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;  
+    overflow-x: hidden;
+}
+
+
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+.top-bar button {
+    background-color: #444;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.top-bar button:hover {
+    background-color: #666;
+}
+
+.transformers-title {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    z-index: 200;
+}
+
+.content {
+    margin-top: 110px; /* 留出空間，確保不被工具條遮住 */
+    padding: 20px;
+}
+
+
+.image-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.image-item {
+    width: 275px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #ccc;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+}
+
+.image-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.image-item:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+.full-width-banner {
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.full-width-banner img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.5s ease-in-out;
+}
+
+.hover-text {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 30px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, bottom 0.3s ease-in-out;
+}
+.full-width-banner:hover img {
+    transform: scale(1.05);
+}
+.full-width-banner:hover .hover-text {
+    opacity: 1;
+}
+
+
+.full-width-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 800px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 1s ease-in-out;
+}
+.carousel-inner img {
+    height: 500px;
+    object-fit: contain;
+    background-color: #000; /* 為輪播背景設置顏色 */
+}
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+
+.new-paragraph {
+    background-color: rgba(0, 0, 0, 0.7); 
+    color: #fff; 
+    text-align: left;
+    margin-top: -320px;
+}
+
+.new-paragraph p {
+    font-size: 15px; 
+    line-height: 1.6;
+    max-width: 800px;
+}
+
+
+.image-section {
+    position: relative;
+    top: -32px;
+    left: 580px; 
+}
+
+.image-section img {
+    width: 100%; 
+    max-width: 800px; 
+    height: auto; /* 保持圖片的比例 */
+}
+.image-section2 {
+    position: relative;
+    height: 500px; 
+    overflow: hidden; /* 隱藏超出區域的內容 */
+}
+
+.image-section2 .container {
+    position: relative;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0; 
+    transform: translateY(20px); 
+    transition: opacity 0.3s ease, transform 0.3s ease; /* 加快動畫過渡 */
+}
+
+.parallax-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover; 
+    transform: scale(1); 
+    transition: transform 0.3s ease-in-out; 
+}
+
+
+.image-section2:hover .parallax-image {
+    transform: scale(1.1); 
+}
+
+
+@media (max-width: 768px) {
+    
+    .new-paragraph {
+        padding: 15px; /* 減少內邊距 */
+        margin-bottom: 500px;
+    }
+
+    .new-paragraph p {
+        font-size: 14px; /* 調整文字大小 */
+    }
+
+    .image-section {
+        margin-top: 20px; /* 減少圖片區塊與其他內容的間距 */
+        top: 0;
+        left: 0;
+    }
+
+    .image-section img {
+        max-width: 0%; /* 圖片最大寬度為100% */
+        border-radius: 5px; /* 圓角效果略微減少 */
+    }
+    .image-section2 {
+        margin-top: 20px; /* 減少圖片區塊與其他內容的間距 */
+        top: 0;
+        left: 0;
+    }
+
+    .image-section2 img {
+        max-width: 100%; /* 圖片最大寬度為100% */
+        border-radius: 5px; /* 圓角效果略微減少 */
+    }
+}
+
+@media (max-width: 576px) {
+
+    .new-paragraph {
+        padding: 15px; /* 減少內邊距 */
+        margin-bottom: 50px;
+        margin-top: 300px;
+    }
+    .new-paragraph p {
+        font-size: 12px; /* 調整文字大小 */
+
+    }
+
+    .image-section {
+        margin-top: 10px; /* 增加與其他內容的間距 */
+    }
+
+    .image-section img {
+        max-width: 0%; /* 圖片寬度為100% */
+    }
+    .image-section2 {
+        top: -100px;
+        left: 0;
+    }
+    .image-section2 img {
+        max-width: 100%; /* 圖片最大寬度為100% */
+    }
+}
+
+
+@media (max-width: 768px) {
+    .image-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .image-item {
+        max-width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .top-bar {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .transformers-title {
+        font-size: 18px;
+        top: 5px;
+        left: 10px;
+    }
+}
+
+.interactive-item {
+    position: relative;
+    overflow: hidden; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%; 
+    max-width: 300px; 
+    height: 800px; 
+    background-color: #000; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.interactive-item {
+    position: relative;
+    overflow: hidden; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%; 
+    max-width: 300px; 
+    height: 400px; 
+    background-color: #000; 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    margin: auto; 
+}
+
+.interactive-item img {
+    width: 100%; 
+    height: 150%; 
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out; 
+}
+
+.interactive-item img:hover {
+    transform: scale(1.1); 
+}
+
+.interactive-item .hover-title {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 18px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.interactive-item:hover .hover-title {
+    opacity: 1; 
+}
+
+
+@media (max-width: 576px) {
+    .interactive-item {
+        max-width: 250%; 
+        height: 200px; 
+    }
+
+    .interactive-item img {
+        height: 100%;
+    }
+
+    .interactive-item .hover-title {
+        font-size: 14px; 
+    }
+}
+
+
+@media (min-width: 577px) and (max-width: 992px) {
+    .interactive-item {
+        max-width: 2000px; 
+        height: 200px; 
+        margin-top: 50;
+    }
+
+    .interactive-item img {
+        height: 100%; 
+    }
+
+    .interactive-item .hover-title {
+        font-size: 30px; 
+    }
+}
+.interactive-item:hover .hover-title {
+    opacity: 1;
+}
+
+@media (min-width: 993px) {
+    .interactive-item {
+        max-width: 300px; 
+        height: 400px;
+    }
+
+    .interactive-item img {
+        height: 150%; 
+    }
+
+    .interactive-item .hover-title {
+        font-size: 18px; 
+    }
+}
+
+
+.footer {
+    padding: 30px;
+    background-color: #2f2f2f; 
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start; 
+    flex-wrap: wrap; 
+    gap: 20px;
+    border-top: 1px solid #444; 
+    padding-top: 20px;
+}
+
+
+.footer-left {
+    flex: 1;
+    max-width: 300px;
+}
+
+.footer-logo {
+    width: 120px;
+    margin-bottom: 10px;
+}
+
+.footer-left p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+.footer-middle {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-middle h3,
+.footer-right h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.footer-middle ul,
+.footer-right ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-middle li,
+.footer-right li {
+    margin-bottom: 8px;
+}
+
+.footer-middle a,
+.footer-right a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-middle a:hover,
+.footer-right a:hover {
+    text-decoration: underline;
+}
+
+
+.footer-right {
+    flex: 1;
+    min-width: 200px;
+}
+
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.footer-social img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s;
+}
+
+.footer-social img:hover {
+    transform: scale(1.2); 
+}
+
+body {
+    font-family: 'Orbitron', sans-serif, Arial, sans-serif;
+    background: url('FW_pics/Cybertron_bg.jpg') no-repeat center center/cover;
+    color: #fff;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.banner {
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.banner h1 {
+    font-size: 3rem;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+    font-weight: bold;
+}
+
+.image-grid img {
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 8px;
+}
+
+.image-grid img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.footer {
+    background-color: #222;
+    color: #aaa;
+    padding: 20px 0;
+    text-align: center;
+}
+dbh1{
+    font-size: 1.5em;
+    color: #ffffff;
+    font-weight: bold;
+}
+dbh2{
+    font-size: 1em;
+    color: #ffffff;
+    font-weight: bold;
+}
+h2{
+    font-size: 2em;
+    color: #ffffff;
+    font-weight: bold;
+}
+/* 作品展示區樣式 */
+#portfolio {
+    padding: 60px 0;
+    background-color: #f9f9f9; 
+}
+
+#portfolio h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #333;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+
+#portfolio h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #007bff;
+    margin: 10px auto 0;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 自動調整列數 */
+    gap: 20px; /* 間距 */
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px; /* 圓角 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 陰影 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #fff;
+}
+
+.portfolio-item:hover {
+    transform: scale(1.05); /* 放大效果 */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* 增強陰影 */
+}
+
+.portfolio-link {
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 123, 255, 0.7);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.portfolio-link:hover .portfolio-hover {
+    opacity: 1; /* 鼠標懸停時顯示覆蓋層 */
+}
+
+.portfolio-hover-content {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.portfolio-caption {
+    padding: 15px;
+    text-align: center;
+}
+
+.portfolio-caption h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.portfolio-caption h4 {
+    font-size: 1rem;
+    color: #6c757d;
+}
+
+
+@media (max-width: 768px) {
+    #portfolio h2 {
+        font-size: 2rem;
+    }
+
+    .portfolio-grid {
+        gap: 15px;
+    }
+}
+

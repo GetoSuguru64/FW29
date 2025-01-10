@@ -1,66 +1,48 @@
-const express = require('express');
-const multer = require('multer');
-const path = require('path');
-const NeDB = require('nedb');
+//install: node js
+//install web server package: express >npm install express
+var express = require("express");
+var server = express();
+var bodyParser = require("body-parser");
 
-const app = express();
-const port = 3000;
+server.use(express.static(__dirname+"/public"));
+server.use(express.json());
+server.use(express.urlencoded({ extended: true }));
 
-// 配置 NeDB
-const db = new NeDB({
-    filename: 'cards.db',
-    autoload: true,
-});
 
-// 配置 multer 上傳文件的存儲目錄和檔名
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, 'uploads/'); // 上傳目錄
-    },
-    filename: (req, file, cb) => {
-        cb(null, Date.now() + path.extname(file.originalname)); // 獨一無二檔名
-    },
-});
-const upload = multer({ storage });
+var fileUpload = require("express-fileupload");
+server.use(fileUpload({defCharset:'utf8', defParamCharset:'utf8'}));
+const PORT = 3000; // 定義伺服器運行的端口號
 
-// 靜態文件服務
-app.use(express.static('FW_main_website'));
-app.use('/uploads', express.static('uploads'));
+var DB = require("nedb-promises");
+var ProfolioDB = DB.create(__dirname+"/profolio.db");
+var ContactDB = DB.create(__dirname+"/contact.db");
+ 
 
-// JSON 解析中間件
-app.use(express.json());
+ProfolioDB.insert([
+    { modal: "#portfolioModa8", imgSrc: "FW_pics/s05.jpg", heading: "", text: "" ,id:"8" ,},
+    { modal: "#portfolioModa9", imgSrc: "FW_pics/s06.jpg", heading: "", text: "" ,id:"9" ,},
+    { modal: "#portfolioModal0", imgSrc: "FW_pics/s07.jpg", heading: "", text: "" ,id:"0" ,},
+    { modal: "#portfolioModal1", imgSrc: "FW_pics/s08.jpg", heading: "", text: "" ,id:"1" ,},
+    { modal: "#portfolioModal2", imgSrc: "FW_pics/s09.jpg", heading: "", text: "" ,id:"2" ,},
+    { modal: "#portfolioModal3", imgSrc: "FW_pics/s10.jpg", heading: "", text: "" ,id:"3" ,},
+])
 
-// 提供首頁
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'FW_main_website', 'finalweb.html'));
-});
-
-// 處理文件上傳與表單數據
-app.post('/api/upload', upload.single('file'), (req, res) => {
-    const { title, description } = req.body;
-    const imageUrl = `/uploads/${req.file.filename}`; // 儲存圖片路徑
-
-    const newCard = { title, description, imageUrl };
-
-    // 將卡片資料保存到 NeDB
-    db.insert(newCard, (err, newDoc) => {
-        if (err) {
-            return res.status(500).send('新增卡片失敗');
+server.get("/profolio", (req,res)=>{
+      //DB
+      ProfolioDB.find({}).then(results=>{
+        if(results != null){
+             res.send(results);
+        }else{
+            res.send("Error!");
         }
-        res.status(201).json(newDoc); // 回傳新增的卡片資料
-    });
-});
-app.get('/api/cards', (req, res) => {
-    db.find({}, (err, cards) => {
-        if (err) {
-            return res.status(500).send('資料讀取錯誤');
-        }
-        res.json(cards); // 返回卡片資料
-    });
-});
+      })
+})
 
+server.post("/contact_me", (req,res)=>{
+     ContactDB.insert(req.body);
+     res.redirect("/#contact");
+})
 
-// 啟動伺服器
-app.listen(port, () => {
-    console.log(`伺服器運行中，請訪問：http://localhost:${port}`);
-});
+server.listen(3000, ()=>{
+    console.log(`伺服器運行中 運行在：http://localhost:${PORT}`);
+})
